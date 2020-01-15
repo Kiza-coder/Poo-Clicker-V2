@@ -1,68 +1,182 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 💩 Poo Clicker V2
+<p align="center">
+Older version of the the project: <br>
+-> https://github.com/MathieuKruk/Poo-Clicker-V1 <-
+</p>
+  
+## ◾ Features
 
-## Available Scripts
+<ul>
+  <li>Cookie Clicker is a mouse-clicking game playable on internet navigators.</li>
+</ul>
 
-In the project directory, you can run:
+<hr>
 
-### `yarn start`
+<p align="center">
+  <img src="https://download.hipwallpaper.com/desktop/1920/1080/52/60/XlPYos.jpg">
+</p>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<hr>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## ◾ Motivation
 
-### `yarn test`
+It has been launch the 💠23/09/2019💠 in the case of a school project (<a href="https://github.com/becodeorg" target="_blank">BeCode</a>).
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A private joke led us develop a javascript game around a little poo.
 
-### `yarn build`
+Below, you will find our guidelines hosted on the school repo: 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+== Missions objectives
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+At the end of this challenge you should have improved your:
 
-### `yarn eject`
+* *JavaScript* skills
+* team skills
+* git conflict skills
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+== The mission
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This challenge will have you create a {clicker}[cookie clicker] as a team.
+Follow the instructions to complete the challenge, to get some ideas check the
+examples in the _resources_ section.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+image::./cookies.jpg[cookies]
 
-## Learn More
+=== Instructions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+NOTE: The steps below are meant to help you in development, but as long as you
+make a cookie clicker you can implement whatever you want.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+.Step 1: base structure
+Write the base structure for the project in *HTML*, *CSS* and *JavaScript*.
+Within the HTML, put a _click_ button which will increment a counter and a label
+initialised at _0_ to display said counter.
 
-### Code Splitting
+.Step 2: prepare the JavaScript
+In your JavaScript prepare variables to allow you to control your button and
+label. You will also need a variable to keep track of the score.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+.Step 3: increase the score
+When you click the button, increase the variable storing the score by _1_, then
+display the current score inside the label.
 
-### Analyzing the Bundle Size
+.Step 4: make a multiplier
+Add another button which will act as a multiplier. When called this button will
+permanently multiply the number of points per click, by _two_ for example.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+.Step 5: price of multiplier
+The multiplier allows you to have a big score quickly, that shouldn't be free,
+it should be a purchase made with the current player score.
 
-### Making a Progressive Web App
+.Step 6: no credit
+You can't make credit, meaning that the player cannot have a negative score.
+Think about updating the score display after a purchase.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+.Step 7: display multiplier counter
+Display the counter within the multiplier. For example, if the counter is worth
+_5_, then the button should display something like _multiplier x5_.
 
-### Advanced Configuration
+.Step 8: increase the cost
+Buying a lot of multiplier is way too easy. For more fun, make it so that each
+time a multiplier is purchased the cost of buying a new one is increased.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+.Step 9: display the cost
+In the text of the multiplier button you should also have the price of the
+upgrade.
 
-### Deployment
+.Step 10: auto-clicker
+Implement a new improvement to buy, the _auto-click_. As the name might suggest
+this bonus will automatically add a click to your score each _x_ seconds.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+.Step 11: bonus
+Implement yet another improvement to buy, the _bonus_. It should grant the
+player a boost in score of _200%_ per click for _30 seconds_. When purchased the
+player should see a timer with the remaining time inside the bonus button.
 
-### `yarn build` fails to minify
+.Step 12: deactivate the buttons 
+Make it so that, if the player doesn't have the points to purchase a multiplier,
+an auto-click or an other bonus, he can't.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+.Step 13: make it pretty
+Your cookie clicker must be pretty, make it look good with CSS or some extra
+JavaScript.
+
+=== Resources
+
+* http://orteil.dashnet.org/cookieclicker/[cookie clicker]
+* https://particle-clicker.web.cern.ch/particle-clicker/[particle clicker]
+
+▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️▪️
+
+<hr>
+
+## ◾ Tasks
+
+- [x] Initialize the ReadMe and the trello.
+- [x] Work on the main project.
+- [ ] Launch the app.
+
+ℹ️ For further informations, please make sure to visit our **Trello** [board](https://trello.com/b/aARBOSKu/poo-clicker-v2)
+
+<hr>
+
+## ◾ Build status
+
+📲 V2.0.1
+Logs
+   - Readme initialized.
+   - ...
+   - ...
+   - ...
+
+<hr>
+
+## ◾ Screenshots
+
+## ◾ Tech/framework used
+
+1. Front-end
+   - [HTML](https://www.w3.org/html/)
+   - [SASS](https://sass-lang.com/)
+   - [React](https://reactjs.org/)
+   - [React-Bootstrap](https://react-bootstrap.github.io/)
+   
+2. Back-end
+
+<hr>
+
+## ◾ Code Example
+
+```
+function test() {
+  console.log("This is a test for code input?");
+}
+```
+
+<hr>
+
+## ◾ Credits
+Team
+   - 👨‍💻  [Kiza](https://github.com/Kiza-coder)
+   - 👨‍💻  [Mathieu Kruk](https://github.com/MathieuKruk)
+
+<hr>
+
+## ◾ License
+
+OpenSource | Free
+
+<hr>
+
+<p align="right">
+ ✍️ Readme Author:
+  <br>
+  <a href="https://github.com/MathieuKruk">Mathieu Kruk</a>
+</p>
+
+<p align="right">
+  <img src="https://media.giphy.com/media/H6VtX1y2rDUJXFahht/giphy.gif" height="40%" width="25%">
+</p>
