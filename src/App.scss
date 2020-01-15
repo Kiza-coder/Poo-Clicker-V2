@@ -1,0 +1,19 @@
+.actionButton {
+    width: 100px;
+    height: 50px;
+    border: 1px solid black;
+    background-color: red !important; 
+    & .buttonAvaible{
+        border: 2px solid green;
+    }
+    & .buttonDisabled{
+        border: 2px solid red; 
+    }
+    & .buttonClick{
+        background-color:yellow !important; 
+    }
+    & .buttonHoover{
+        width: 110px;
+        height: 60px;
+    }
+}
