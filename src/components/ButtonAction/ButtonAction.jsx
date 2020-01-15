@@ -22,6 +22,10 @@ const reducer = (state,action) =>{
             return {
                 classname: "actionButton buttonClick" 
             }
+        case 'buttonHoover':
+            return {
+                classname: "actionButton buttonHoover" 
+            }
         default:
             return state
     }
@@ -49,7 +53,7 @@ const handleButtonMouseOut = () => {
 
     return (
         <div>
-            <Button className={classname.classname} onClick={handleButtonMouseClick} onMouseOver={handleButtonMouseHoover} onMouseOut={handleButtonMouseOut}>{action.name}</Button> 
+            <div className={classname.classname} onClick={handleButtonMouseClick} onMouseOver={handleButtonMouseHoover} onMouseOut={handleButtonMouseOut}>{action.name}</div> 
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React, {useState,useReducer} from 'react';
+import React, {useState,useReducer,useEffect} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import Score from '../Score/Score';
@@ -17,7 +17,17 @@ const initialState = {
 }
 
 const reducer = (state,action) =>{
-
+    let result = state
+    switch(action){
+        case "avaible":
+            result = {... state, avaible:true }
+            return result
+        case "level":
+            result = {... state, lvl: state.lvl + 1}
+            
+    }
+    console.log(result)
+    return result 
 }
 
 const Game =() => {
@@ -37,9 +47,35 @@ const addClick=(clickValue) =>{
 // {# ACTIONS FUCNTIONS #}
 const [action,dispatch] = useReducer(reducer,initialState)
 
-function clickIncrease() {
-    setClickValue(action.increase)
+function payment() {
+    setClickCounter(clickCounter-action.cost)
 }
+
+function levelup() {
+    dispatch("level")
+}
+
+function bonusClickIncrease() {
+    setClickValue(action.increase)
+    payment()
+    levelup()
+}
+
+
+useEffect(() => {
+    console.log(clickCounter)
+    if(clickCounter >= action.cost)
+    {
+        setTimeout(() => {
+            dispatch('avaible')
+            
+
+        },0)
+    }
+   
+},[clickCounter])
+
+
         return  (
                 <div>
                     <Container fluid={true} className={'mb-4'}>
@@ -56,7 +92,7 @@ function clickIncrease() {
                                 </Row>
                                 <Row>
                                     <Col md={12}>
-                                        <Actions action={action} clickIncrease={clickIncrease}/>
+                                        <Actions action={action} clickIncrease={bonusClickIncrease}/>
                                     </Col>
                                 </Row>
                             </Col>

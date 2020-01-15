@@ -1,19 +1,25 @@
+// {#- COLORS -#}
+$colorPrimary: white;
+$colorSecondary: white;
+$colorTertiary: white;
+
+// {#- HTML TAGS -#}
+
+// {#- CLASSES -#}
 .actionButton {
     width: 100px;
     height: 50px;
-    border: 1px solid black;
-    background-color: red !important; 
+    border: 3px solid black;
     & .buttonAvaible{
         border: 2px solid green;
     }
     & .buttonDisabled{
-        border: 2px solid red; 
+        background-color: grey !important;
     }
     & .buttonClick{
         background-color:yellow !important; 
     }
-    & .buttonHoover{
-        width: 110px;
-        height: 60px;
-    }
+}
+.actionButton:hover {
+    background-color: red !important;
 }
