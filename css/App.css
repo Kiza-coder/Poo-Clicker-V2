@@ -52,4 +52,11 @@
 .actionButton:hover {
   background-color: red !important;
 }
+
+.pooButton:active {
+  -webkit-transform-origin: 50% 80%;
+          transform-origin: 50% 80%;
+  -webkit-animation: zoomIn 0.5s cubic-bezier(0.47, 0, 0.75, 0.72) infinite alternate;
+          animation: zoomIn 0.5s cubic-bezier(0.47, 0, 0.75, 0.72) infinite alternate;
+}
 /*# sourceMappingURL=App.css.map */

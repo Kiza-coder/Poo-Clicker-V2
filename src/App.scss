@@ -56,3 +56,8 @@ $colorTertiary: rgb(0, 0, 0);
     background-color: red !important;
 }
 
+// {#- ANIMATIONS -#}
+.pooButton:active {
+    transform-origin: 50% 80%;
+    animation: zoomIn .5s cubic-bezier(0.47, 0, 0.75, 0.72) infinite alternate;
+}
