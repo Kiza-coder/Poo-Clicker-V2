@@ -8,10 +8,10 @@ Older version of the the project: <br>
 * [Features](#Features)
 * [Motivation](#Motivation)
 * [Tasks](#Tasks)
-* [Build status](#Build status)
+* [Build status](#Build-status)
 * [Screenshots](#Screenshots)
-* [Tech/framework used](#OrganizationTech/framework used)
-* [Code Example](#Technology)
+* [Technology](#Technology)
+* [Code-Example](#Code-Example)
 * [Credits](#Credits)
 * [License](#License)
 
@@ -134,7 +134,7 @@ JavaScript.
 
 <hr>
 
-## ◾ Build status
+## ◾ Build-status
 
 📲 V2.0.1
 Logs
@@ -147,7 +147,7 @@ Logs
 
 ## ◾ Screenshots
 
-## ◾ Tech/framework used
+## ◾ Technology
 
 1. Front-end
    - [HTML](https://www.w3.org/html/)
@@ -164,7 +164,7 @@ Logs
 
 <hr>
 
-## ◾ Code Example
+## ◾ Code-Example
 
 ```
 function test() {
