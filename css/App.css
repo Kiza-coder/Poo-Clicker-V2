@@ -1,5 +1,13 @@
 .componentFooter {
-  background-color: burlywood;
+  height: 3rem;
+  background-color: black;
+  color: wheat;
+  position: fixed;
+  bottom: 0;
+}
+
+.componentFooter .footerIcon.fa {
+  color: white !important;
 }
 
 .jumbotron {
