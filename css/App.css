@@ -1,3 +1,11 @@
+.componentFooter {
+  background-color: burlywood;
+}
+
+.jumbotron {
+  background-image: url(https://cdn.pixabay.com/photo/2018/02/18/20/29/computer-3163436_1280.png);
+}
+
 .actionButton {
   width: 100px;
   height: 50px;

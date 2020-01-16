@@ -13,11 +13,9 @@ import Footer from './components/Footer/Footer';
 const App =() => {
   return (
           <div>
-            <Container fluid={true}>
               <JumbotronHeader />
               <Game />
               <Footer />
-            </Container>
           </div>
   );
 }
