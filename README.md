@@ -141,10 +141,15 @@ Logs
 1. Front-end
    - [HTML](https://www.w3.org/html/)
    - [SASS](https://sass-lang.com/)
+   - [Font-Awesome 4.7](https://fontawesome.com/v4.7.0/)
    - [React](https://reactjs.org/)
    - [React-Bootstrap](https://react-bootstrap.github.io/)
+   - [Pose](https://popmotion.io/pose/)
    
 2. Back-end
+
+3. Others
+   - [Yarn](https://yarnpkg.com/lang/en/)
 
 <hr>
 
