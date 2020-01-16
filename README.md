@@ -5,7 +5,7 @@ Older version of the the project: <br>
 </p>
 
 ## Table of contents
-* [Features](#Features)
+* [Features](## ◾ Features)
 * [Motivation](#Motivation)
 * [Tasks](#Tasks)
 * [Build status](#Build-status)
