@@ -4,18 +4,6 @@ Older version of the the project: <br>
 -> https://github.com/MathieuKruk/Poo-Clicker-V1 <-
 </p>
   
-## ◾ Table of contents
-
-  * [◾ Features](#--features)
-  * [◾ Motivation](#--motivation)
-  * [◾ Tasks](#--tasks)
-  * [◾ Build-status](#--build-status)
-  * [◾ Screenshots](#--screenshots)
-  * [◾ Technology](#--technology)
-  * [◾ Code-Example](#--code-example)
-  * [◾ Credits](#--credits)
-  * [◾ License](#--license)
-
 ## ◾ Features
 
 <ul>
