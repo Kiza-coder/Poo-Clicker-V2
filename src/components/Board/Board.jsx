@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Container, Row, Col } from 'react-bootstrap';
-import Poo from './Poo';
+
 
 const Board =({addClick, clickValue}) => {
 const handleClick=() =>{
@@ -20,7 +20,7 @@ const handleClick=() =>{
 					<div className={"d-flex justify-content-around"} class="pooButton" onClick={handleClick}>
 						<img src={process.env.PUBLIC_URL + '/assets/img/poops/poop.png'}></img>
 					</div>
-					<Poo />
+					
 				    </Col>
 			    </Row>
 			    </Container>

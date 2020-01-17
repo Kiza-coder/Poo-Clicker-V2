@@ -9,7 +9,7 @@ import Actions from '../Actions/Actions';
 const initialState = {
     name: "AddClick",
     type: "upgradeClick",
-    lvl: 1,
+    lvl: 0,
     cost: 10,
     increase: 2,
     length: 0,
@@ -22,12 +22,14 @@ const reducer = (state,action) =>{
         case "avaible":
             result = {... state, avaible:true }
             return result
+        case "disable":
+            result = {... state, avaible:false }
+            return result
         case "level":
-            result = {... state, lvl: state.lvl + 1}
-            
+            result = {... state, lvl: state.lvl + 1, increase: state.increase *2}
+            return result        
     }
-    console.log(result)
-    return result 
+
 }
 
 const Game =() => {
@@ -55,25 +57,39 @@ function levelup() {
     dispatch("level")
 }
 
-function bonusClickIncrease() {
-    setClickValue(action.increase)
+function bonusClickIncrease() {   
     payment()
     levelup()
+    if (action.lvl === 0){
+        setClickValue(2)
+    }
+    if (action.lvl === 1){
+        setClickValue(4)
+    }
+    if (action.lvl === 2){
+        setClickValue(8)
+        console.log(clickValue)
+        setTimeout(() => {
+            dispatch("disable")
+        },0)
+    }
 }
 
 
 useEffect(() => {
     console.log(clickCounter)
-    if(clickCounter >= action.cost)
+    if(clickCounter >= action.cost && action.lvl===3)
     {
         setTimeout(() => {
             dispatch('avaible')
-            
-
         },0)
     }
    
 },[clickCounter])
+
+useEffect(() => {
+    console.log(action)
+},[action])
 
 
         return  (
