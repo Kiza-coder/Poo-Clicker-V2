@@ -1,9 +1,10 @@
-import React, {useState,useReducer,useEffect} from 'react';
+import React, {useState,useReducer,useEffect,useRef} from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import Score from '../Score/Score';
 import Board from '../Board/Board';
 import Actions from '../Actions/Actions';
+import { clear } from 'sisteransi';
 
 // Creating object
 const initialState = [
@@ -24,7 +25,7 @@ const initialState = [
         type: "packageClick",
         lvl: 0,
         cost: 10,
-        increase: 20,
+        increase: 0,
         time: 5000,
         length: 0,
         avaible: false
@@ -46,19 +47,22 @@ const reducer = (state,action) =>{
         case "disabled":
             new_state[action.index].avaible = false
             return new_state
-        case "level":
+        case "level-upgradeClick":
             new_state[action.index].lvl = new_state[action.index].lvl +1
-            return new_state        
+            return new_state
+        case 'level-packageClick':
+            new_state[action.index].lvl = new_state[action.index].lvl+1
+            new_state[action.index].increase = new_state[action.index].increase + 15
+            return new_state     
     }
 
 }
 
 const reducerInterval = (state,action) =>{
-    const new_state = [...state]
+    let new_state = [...state]
     switch(action.type){
         case "time":
-
-            new_state[action.id]= action.intervalId
+            new_state.push({idAction:action.actionId, idInterval:action.intervalId})
             return new_state
     }
 }
@@ -72,10 +76,14 @@ const [clickCounter, setClickCounter] = useState(0)
 // Value of our click
 const [clickValue, setClickValue] = useState(1)
 
-
+// Use ref Bind to my CLickCounter
+const myRef = useRef(null)
+myRef.current = (increase) => {
+    setClickCounter(clickCounter + increase)
+}
 
 // Add click function
-const addClick=(clickValue) =>{
+const addClick = (clickValue) =>{
     // Etat counter + click
     setClickCounter(clickCounter+clickValue);
 }
@@ -101,7 +109,11 @@ function payment(id) {
 //function who increase the lvl of the actions
 function levelup(id) {
     if(action[id].lvl !== 3){
-        dispatch({type:"level",index:id})
+        dispatch({type:"level-upgradeClick",index:id})
+        if(action[id].type === "packageClick")
+        {
+            dispatch({type: "level-packageClick",index:id})
+        }
     }
 }
 
@@ -109,7 +121,6 @@ function levelup(id) {
 
 // function who handled the behaviour of bonus and set the paiement and the lvl up
 function bonusClickIncrease(id) {  
- 
     if(payment(id)){
         levelup(id)
         if (action[id].lvl === 0){
@@ -127,31 +138,48 @@ function bonusClickIncrease(id) {
     }
 }
 
-// function who handled the behaviour of bonus and set the paiement and the lvl up
-const interval = (clickCounter) => {
-    setInterval((clickCounter) => {
-        setClickCounter(clickCounter+1)
-        console.log("3sec")
-        console.log("suite")
-        console.log(clickCounter)
-    },3000)
-}
 
 
+
+// Function who handle the behaviour  of the  package of click bonus
 const bonusClickPackage = (id) => {
     if(payment(id)){
         levelup(id)
         if (action[id].lvl === 0){
-            interval(clickCounter)
-            setTimeout(()=> {
-                console.log('TimeoutDispatch')
-                dispatchInterval({type:"time", intervalId : 2})
-            },action[id].time+100)
+            let intervalId = setInterval(() => {
+                setClickCounter( clickCounter => clickCounter + action[id].increase)
+            },action[id].time)
+            dispatchInterval({type:"time", intervalId:intervalId ,actionId: id})
+    
         }
-
         if (action[id].lvl === 1){
+            tabInterval.forEach((element) => {
+                console.log(element)
+                if(element.actionId === id)
+                {
+                    console.log("erase")
+                    element.actionId.clearInterval()
+                }
+            })
+            let intervalId = setInterval(() => {
+                setClickCounter( clickCounter => clickCounter + action[id].increase)
+            },action[id].time)
+            setTimeout(()=> {
+                dispatchInterval({type:"time", intervalId :intervalId ,actionId: id})
+                dispatch({type:"disabled", index:id})
+            },action[id].time+1000)
         }
-        if (action[id].lvl === 2){
+        if(action[id].lvl === 2){
+            tabInterval.forEach((element) => {
+                if(element.actionId === id)
+                {
+                    console.log("erase")
+                    element.actionId.clearInterval()
+                }
+            })
+            setInterval(() => {
+                setClickCounter( clickCounter => clickCounter + action[id].increase)
+            },action[id].time)
             setTimeout(() => {
                 dispatch({type:"disabled", index:id})
             },0)
@@ -171,15 +199,9 @@ useEffect(() => {
                 setTimeout(() => {
                     dispatch({type:"avaible", index:index })
                 },0)
-            }
-       
+            }  
     })      
 },[clickCounter])
-
-useEffect(()=> {
-
-}
-,[])
 
 
 
