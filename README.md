@@ -183,5 +183,5 @@ OpenSource | Free
 </p>
 
 <p align="right">
-  <img src="https://media.giphy.com/media/H6VtX1y2rDUJXFahht/giphy.gif" height="40%" width="25%">
+  <img src="https://media.giphy.com/media/21JAB6c2Me9wG0E5pp/giphy.gif" height="40%" width="25%">
 </p>
