@@ -5,8 +5,8 @@ import ButtonAction from '../ButtonAction/ButtonAction'
 
 function Actions({action, clickIncrease}) {
 
-function handleClickAction(){
-    clickIncrease()
+function handleClickAction(id){
+    clickIncrease(id)
 }
 
 

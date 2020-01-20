@@ -38,7 +38,7 @@ const [classname,dispatch] = useReducer(reducer,initialState)
 // Click Button Event
 const handleButtonMouseClick = () => {
     dispatch({type:'buttonClick'})
-    handleClickAction()
+    handleClickAction(action.id)
 }
 
 // Hoover Button Event

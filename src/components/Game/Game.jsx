@@ -6,28 +6,40 @@ import Board from '../Board/Board';
 import Actions from '../Actions/Actions';
 
 // Creating object
-const initialState = {
-    name: "AddClick",
-    type: "upgradeClick",
-    lvl: 0,
-    cost: 10,
-    increase: 2,
-    length: 0,
-    avaible: false,
-}
+const initialState = [
+    {
+        id: 0,
+        name: "AddClick",
+        type: "upgradeClick",
+        lvl: 0,
+        cost: 10,
+        increase: 2,
+        length: 0,
+        avaible: false
+    },
+    {
+        id:1,
+        name: "Mouse",
+        type: "packageClick",
+        lvl: 0,
+        cost: 10,
+        increase: 2,
+        length: 0,
+        avaible: false
+    }
+]
 
 const reducer = (state,action) =>{
-    let result = state
-    switch(action){
+    switch(action.type){
         case "avaible":
-            result = {... state, avaible:true }
-            return result
-        case "disable":
-            result = {... state, avaible:false }
-            return result
+            new_state[action.index].avaible = true
+            return new_state
+        case "disabled":
+            new_state[action.index].avaible = false
+            return new_state
         case "level":
-            result = {... state, lvl: state.lvl + 1, increase: state.increase *2}
-            return result        
+            new_state[action.index].lvl = new_state[action.index].lvl +1
+            return new_state        
     }
 
 }
@@ -47,49 +59,54 @@ const addClick=(clickValue) =>{
     setClickCounter(clickCounter+clickValue);
 }
 // {# ACTIONS FUCNTIONS #}
-const [action,dispatch] = useReducer(reducer,initialState)
+const [action,dispatch] = useReducer(reducer,JSON.parse(JSON.stringify(initialState)))
 
-function payment() {
-    setClickCounter(clickCounter-action.cost)
+function payment(id) {
+    if(clickCounter-action[id].cost>=0)
+    {
+        setClickCounter(clickCounter-action[id].cost)
+    }
 }
 
-function levelup() {
-    dispatch("level")
+function levelup(id) {
+    if(action[id].lvl !== 3){
+        dispatch("level")
+    }
 }
 
-function bonusClickIncrease() {   
-    payment()
-    levelup()
-    if (action.lvl === 0){
+function bonusClickIncrease(id) {   
+    console.log("Bonus :" , action[id])
+    payment(id)
+    levelup(id)
+    if (action[id].lvl === 0){
         setClickValue(2)
     }
-    if (action.lvl === 1){
+    if (action[id].lvl === 1){
         setClickValue(4)
     }
-    if (action.lvl === 2){
+    if (action[id].lvl === 2){
         setClickValue(8)
-        console.log(clickValue)
         setTimeout(() => {
-            dispatch("disable")
+            dispatch({type:"disabled", index:id})
         },0)
     }
 }
 
 
 useEffect(() => {
-    console.log(clickCounter)
-    if(clickCounter >= action.cost && action.lvl===3)
+    action.forEach((element,index) => {
+        console.log)(element)
+        if(clickCounter >= element.cost && element.lvl !== 3)
     {
         setTimeout(() => {
-            dispatch('avaible')
+            dispatch({type:"avaible", index:'index' })
         },0)
     }
-   
+    })
 },[clickCounter])
 
-useEffect(() => {
-    console.log(action)
-},[action])
+
+
 
 
         return  (
@@ -108,7 +125,7 @@ useEffect(() => {
                                 </Row>
                                 <Row>
                                     <Col md={12}>
-                                        <Actions action={action} clickIncrease={bonusClickIncrease}/>
+                                        <Actions action={action[0]} clickIncrease={bonusClickIncrease}/>
                                     </Col>
                                 </Row>
                             </Col>
