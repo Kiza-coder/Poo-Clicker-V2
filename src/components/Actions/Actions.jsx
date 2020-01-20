@@ -1,12 +1,22 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Table } from 'react-bootstrap';
 
-import ButtonAction from '../ButtonAction/ButtonAction'
+import ActionsRow from '../ActionsRow/ActionsRow'
 
-function Actions({action, clickIncrease}) {
+function Actions({action, clickIncrease, clickPackage}) {
 
+
+// handle onCLick of the action and 
 function handleClickAction(id){
-    clickIncrease(id)
+    if(action[id].type === "upgradeClick")
+    {
+        clickIncrease(id)
+    }
+    if(action[id].type == 'packageClick')
+    {
+        clickPackage(id)
+    }
+    
 }
 
 
@@ -15,8 +25,18 @@ function handleClickAction(id){
             <Container className={"border border-dark"}>
                 <Row>
                     <Col>
-                        <h1>Actions Container</h1>
-                        <ButtonAction action={action} handleClickAction={handleClickAction}/>
+                    <Table>
+                        <thead>
+                            <tr>
+                        <th>
+                            Action Elements
+                        </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <ActionsRow actionsRow={action} clickAction={handleClickAction}/>
+                        </tbody>
+                    </Table>
                     </Col>
                 </Row>
             </Container>
