@@ -152,9 +152,9 @@ const bonusClickPackage = (id) => {
             dispatchInterval({type:"time", intervalId:intervalId ,actionId: id})
     
         }
-        if (action[id].lvl === 1){
+        if(action[id].lvl === 1){
             tabInterval.forEach((element) => {
-                console.log(element)
+                console.log(element.actionId === id)
                 if(element.actionId === id)
                 {
                     console.log("erase")
