@@ -9,11 +9,13 @@ import { Container } from 'react-bootstrap';
 import JumbotronHeader from './components/Jumbotron/Jumbotron';
 import Game from './components/Game/Game';
 import Footer from './components/Footer/Footer';
+import Ribbon from './components/Ribbon/Ribbon';
 
 const App =() => {
   return (
           <div>
               <JumbotronHeader />
+              <Ribbon />
               <Game />
               <Footer />
           </div>

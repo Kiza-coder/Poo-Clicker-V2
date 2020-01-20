@@ -7,7 +7,7 @@ const Footer = () => {
             <Container fluid={true} className={'mt-4'}>
                     <Row>
                         <Col md={6} className={'componentFooter d-flex justify-content-around align-items-center'}>
-                            <small>Follow me:</small>
+                            <small>Follow us:</small>
                             
                             <a link href="https://github.com/MathieuKruk" target="_blank" rel="noopener noreferrer"><i className={"footerIcon fa fa-lg fa-github"} aria-hidden="true"></i></a>
                             
