@@ -193,6 +193,7 @@ const bonusClickPackage = (id) => {
 
 // useEffect each time the table of action is modified, he will check if there is more modification to do
 useEffect(() => {
+    console.log("OK")
     action.forEach((element,index) => {
             if(clickCounter >= element.cost && element.lvl !== 3)
             {
@@ -200,7 +201,8 @@ useEffect(() => {
                     dispatch({type:"avaible", index:index })
                 },0)
             }  
-    })      
+    })
+    console.log(tabInterval)      
 },[clickCounter])
 
 
