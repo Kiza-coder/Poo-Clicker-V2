@@ -95,7 +95,7 @@ function bonusClickIncrease(id) {
 
 useEffect(() => {
     action.forEach((element,index) => {
-        console.log)(element)
+        console.log(element)
         if(clickCounter >= element.cost && element.lvl !== 3)
     {
         setTimeout(() => {
