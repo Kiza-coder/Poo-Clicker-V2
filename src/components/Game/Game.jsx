@@ -101,8 +101,7 @@ useEffect(() => {
         setTimeout(() => {
             dispatch({type:"avaible", index:'index' })
         },0)
-    }
-    })
+    }    
 },[clickCounter])
 
 
