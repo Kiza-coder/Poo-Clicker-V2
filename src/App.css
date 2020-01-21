@@ -1,4 +1,17 @@
+body {
+  background: #fac499;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(2%, #fac499), to(#a2ff7d));
+  background: linear-gradient(0deg, #fac499 2%, #a2ff7d 100%);
+}
+
+td {
+  width: 3rem;
+  text-align: center;
+  border: solid 1px black;
+}
+
 .componentFooter {
+  margin-bottom: 3rem;
   height: 3rem;
   background-color: black;
   color: wheat;
@@ -13,9 +26,8 @@
 .pooButton {
   background-color: rgba(222, 184, 135, 0) !important;
   background-image: url(https://png2.cleanpng.com/sh/99fa4b8279626b211e1abb350241b1d0/L0KzQYm3U8IxN6ttj5H0aYP2gLBuTgBqdJYyh9g2cHByPbb0jBpqNZdqe9d8LYSwg7nwkwQue6Vue91ucj3zf7F3TgBvb15qhdHzaT3sg73ojvQuPZJnSdU6ZULlcoi5gcMvQGc9UasAOEi0RYO4Vck5QWU7T6gCOD7zfri=/kisspng-pile-of-poo-emoji-feces-t-shirt-sticker-poop-png-emoji-island-5ab1c1e2bb72a3.8689958815215989467678.png);
-  border: solid 3px black;
-  height: 5rem;
-  width: 5rem;
+  height: 11rem;
+  width: 11rem;
 }
 
 .pooButton img {
@@ -23,12 +35,27 @@
   margin-right: 0.25rem;
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
-  height: 4rem;
-  width: 4rem;
+  height: 10rem;
+  width: 10rem;
 }
 
 .jumbotron {
-  background-image: url(https://cdn.pixabay.com/photo/2018/02/18/20/29/computer-3163436_1280.png);
+  background-image: url(./components/Jumbotron/jumbotron.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 22rem;
+  border: solid 3px black;
+  border-left: none;
+  border-right: none;
+}
+
+.jumbotronTitle {
+  font-size: 4rem;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.843);
+  border: solid 2px brown;
+  color: white;
 }
 
 .actionButton {
@@ -50,7 +77,8 @@
 }
 
 .actionButton:hover {
-  background-color: red !important;
+  background-color: green !important;
+  color: white;
 }
 
 .pooButton:active {
@@ -59,4 +87,81 @@
   -webkit-animation: zoomIn 0.5s cubic-bezier(0.47, 0, 0.75, 0.72) infinite alternate;
           animation: zoomIn 0.5s cubic-bezier(0.47, 0, 0.75, 0.72) infinite alternate;
 }
+
+.box {
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+/* RIBBON */
+/* Specifying the name for animation keyframes and keyframes themselves */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@-webkit-keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.ticker-wrap {
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 2rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding-left: 100%;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.ticker-wrap .ticker {
+  display: inline-block;
+  height: 2rem;
+  line-height: 2rem;
+  white-space: nowrap;
+  padding-right: 100%;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: ticker;
+  animation-name: ticker;
+  -webkit-animation-duration: 30s;
+  animation-duration: 30s;
+}
+
+.ticker-wrap .ticker__item {
+  font-family: 'Space Mono', monospace;
+  display: inline-block;
+  padding: 0 2rem;
+  font-size: 1rem;
+  color: white;
+}
+
+/* RIBBON TEXT */
 /*# sourceMappingURL=App.css.map */
