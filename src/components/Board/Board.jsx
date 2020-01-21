@@ -30,18 +30,10 @@ const handleClick=() =>{
 			    </Row>
 			    <Row>
 				    <Col md={12} className={"d-flex justify-content-center"}>
-<<<<<<< HEAD
 					<div className={"d-flex justify-content-around"} class="pooButton" onClick={handleClick}>
 						<img src={process.env.PUBLIC_URL + '/assets/img/poops/poop.png'} alt="The poo"></img>
 					</div>
 					
-=======
-						<Box className="box" pose={isVisible ? 'visible' : 'hidden'} >
-							<div className={"d-flex justify-content-center"} class="pooButton" onClick={handleClick}>
-								<img src={process.env.PUBLIC_URL + '/assets/img/poops/poop.png'}></img>
-							</div>
-						</Box>
->>>>>>> dev
 				    </Col>
 			    </Row>
 			    </Container>
