@@ -83,17 +83,16 @@ const reducer = (state,action) =>{
         case "level-upgradeClick":
             new_state[action.index].lvl = new_state[action.index].lvl +1
             return new_state
-            
+
         case 'level-packageClick':
-            console.log("Im here !!")
             new_state[action.index].lvl = new_state[action.index].lvl+1
             new_state[action.index].increase = new_state[action.index].increase + 5*action.factor
             new_state[action.index].cost = new_state[action.index].cost*3
-            console.log(new_state[action.index].increase)
+            
             return new_state
 
         case "level-bonusClick":
-            new_state[action.index].bonus = true
+            new_state[action.index].bonus = action.activate
             return new_state
 
         default:
@@ -154,7 +153,7 @@ function levelup(id) {
         }
         if(action[id].type === "bonusClick")
         {
-            dispatch({type: "level-bonusClick",index:id})
+            dispatch({type: "level-bonusClick",index:id, activate:true})
         }
     }
 }
@@ -189,7 +188,6 @@ useEffect(() => {
             setClickCounter(clickCounter  => clickCounter + action[2].increase)
         },action[2].time)
         let cow = setInterval(() =>{
-            console.log(action)
             setClickCounter(clickCounter  => clickCounter + action[3].increase)
         },action[3].time)
 },[])
@@ -219,8 +217,29 @@ useEffect(() => {
     })      
 },[clickCounter])
 
+
+
+const bonusClick = (id) => {
+    console.log("BOnusok")
+    if(payment(id)){
+        levelup(id)
+        if(action[id].lvl === 2){
+            dispatch({ type:"disabled",index:id })
+        }
+    }  
+}
+
+
 useEffect(() => {
-    console.log("ok")
+    if(action[4].bonus === true)
+    {
+        let previousState = clickValue
+        setClickValue(action[4].increase)
+        setTimeout(()=>{
+            setClickValue(previousState)
+        },action[4].time)
+        dispatch({type: "level-bonusClick",index:4, activate:false})
+    }
 },[action])
 
 
@@ -244,7 +263,7 @@ useEffect(() => {
                                 </Row>
                                 <Row>
                                     <Col md={12}>
-                                        <Actions action={action} clickIncrease={bonusClickIncrease} clickPackage={bonusClickPackage}/>
+                                        <Actions action={action} clickBonus={bonusClick} clickIncrease={bonusClickIncrease} clickPackage={bonusClickPackage}/>
                                     </Col>
                                 </Row>
                             </Col>

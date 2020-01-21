@@ -3,7 +3,7 @@ import { Container, Row, Col, Table } from 'react-bootstrap';
 
 import ActionsRow from '../ActionsRow/ActionsRow'
 
-function Actions({action, clickIncrease, clickPackage}) {
+function Actions({action, clickIncrease, clickPackage,clickBonus}) {
 
 
 // handle onCLick of the action and 
@@ -16,6 +16,11 @@ function handleClickAction(id){
     {
         clickPackage(id)
     }
+    if(action[id].type === 'bonusClick')
+    {
+        clickBonus(id)
+    }
+
     
 }
 
