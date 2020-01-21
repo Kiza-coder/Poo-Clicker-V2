@@ -51,6 +51,18 @@ const initialState = [
         time: 2000,
         factor: 4,
         avaible: false
+    },
+    {
+        id:4,
+        name: "bonus",
+        type: "bonusClick",
+        lvl: 0,
+        cost: 7,
+        increase: 150,
+        time: 6000,
+        factor: 0,
+        avaible: false,
+        bonus: false
     }
 ]
 
@@ -71,6 +83,7 @@ const reducer = (state,action) =>{
         case "level-upgradeClick":
             new_state[action.index].lvl = new_state[action.index].lvl +1
             return new_state
+            
         case 'level-packageClick':
             console.log("Im here !!")
             new_state[action.index].lvl = new_state[action.index].lvl+1
@@ -78,6 +91,11 @@ const reducer = (state,action) =>{
             new_state[action.index].cost = new_state[action.index].cost*3
             console.log(new_state[action.index].increase)
             return new_state
+
+        case "level-bonusClick":
+            new_state[action.index].bonus = true
+            return new_state
+
         default:
             return initialState     
     }
@@ -93,6 +111,7 @@ const Game =() => {
 const [clickCounter, setClickCounter] = useState(0)
 // Value of our click
 const [clickValue, setClickValue] = useState(1)
+
 
 // Use ref Bind to my CLickCounter
 
@@ -133,6 +152,10 @@ function levelup(id) {
         {
             dispatch({type: "level-packageClick",index:id, factor:action[id].factor})
         }
+        if(action[id].type === "bonusClick")
+        {
+            dispatch({type: "level-bonusClick",index:id})
+        }
     }
 }
 
@@ -157,7 +180,7 @@ function bonusClickIncrease(id) {
     }
 }
 
-
+// Stock all the setInterval  who is linked to the action with type ""
 useEffect(() => {
         let mouse = setInterval(() =>{
             setClickCounter(clickCounter  => clickCounter + action[1].increase)
@@ -166,7 +189,8 @@ useEffect(() => {
             setClickCounter(clickCounter  => clickCounter + action[2].increase)
         },action[2].time)
         let cow = setInterval(() =>{
-            setClickCounter(clickCounter  => clickCounter + action[2].increase)
+            console.log(action)
+            setClickCounter(clickCounter  => clickCounter + action[3].increase)
         },action[3].time)
 },[])
 
@@ -194,6 +218,10 @@ useEffect(() => {
             }  
     })      
 },[clickCounter])
+
+useEffect(() => {
+    console.log("ok")
+},[action])
 
 
 
