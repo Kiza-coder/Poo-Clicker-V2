@@ -49,7 +49,7 @@ const initialState = [
         cost: 40,
         increase: 0,
         time: 2000,
-        factor: 3,
+        factor: 4,
         avaible: false
     }
 ]
