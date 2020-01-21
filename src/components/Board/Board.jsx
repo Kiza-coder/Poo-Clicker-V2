@@ -10,13 +10,9 @@ const Box = posed.div({
 
 const Board =({addClick, clickValue}) => {
 const[isVisible,setIsVisible] = useState(true)
-useEffect(() => {
-    const interval = setInterval(() => {
-        setIsVisible(!isVisible)
-        console.log(isVisible)
-    },3000)
-    return () => clearInterval(interval)
-})
+
+
+
 const handleClick=() =>{
 	addClick(clickValue)
 }
