@@ -18,7 +18,7 @@ const handleClick=() =>{
 			    <Row>
 				    <Col md={12} className={"d-flex justify-content-center"}>
 					<div className={"d-flex justify-content-around"} class="pooButton" onClick={handleClick}>
-						<img src={process.env.PUBLIC_URL + '/assets/img/poops/poop.png'}></img>
+						<img src={process.env.PUBLIC_URL + '/assets/img/poops/poop.png'} alt="The poo"></img>
 					</div>
 					
 				    </Col>

@@ -12,7 +12,7 @@ function handleClickAction(id){
     {
         clickIncrease(id)
     }
-    if(action[id].type == 'packageClick')
+    if(action[id].type === 'packageClick')
     {
         clickPackage(id)
     }

@@ -1,7 +1,4 @@
-
-
 import React, {useReducer} from 'react'
-import { Button } from 'react-bootstrap'
 
 const initialState = {
     classname: "actionButton"
