@@ -6,7 +6,7 @@ function Score({score}) {
 
     return (
         <div>
-            <Container className={"border border-dark"}>
+            <Container className={"border border-dark boxScore"}>
                 <Row>
                     <Col md={12} className={"d-flex justify-content-left"}>
                         <h1>Score Container</h1>      

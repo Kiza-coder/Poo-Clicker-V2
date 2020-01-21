@@ -22,7 +22,7 @@ function handleClickAction(id){
 
     return (
         <div>
-            <Container className={"border border-dark"}>
+            <Container className={"border border-dark boxAction"}>
                 <Row>
                     <Col>
                     <Table>

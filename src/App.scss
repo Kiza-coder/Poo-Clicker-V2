@@ -7,11 +7,17 @@ $colorTertiary: rgb(0, 0, 0);
 body {
     background: rgb(250,196,153);
     background: linear-gradient(0deg, rgba(250,196,153,1) 2%, rgba(162,255,125,1) 100%);
+    font-family: 'Concert One', cursive;
 }
 td {
     width: 3rem;
     text-align: center;
     border: solid 1px black; 
+}
+span {
+  .scoreTitle {
+    color: red;
+  }
 }
 // {#- MAIN COMPONENTS -#}
 .componentFooter {
@@ -43,16 +49,17 @@ td {
 }
 
 .jumbotron {
-    background-image: url(./components/Jumbotron/jumbotron.png);
+    background-image: url(./components/Jumbotron/jumbotronwallpapercaca.jpg);
     background-size: cover;
     background-position: center;
-     background-repeat: no-repeat;
-    height: 22rem;
+    background-repeat: no-repeat;
+    height: 18rem;
     border: solid 3px black;
     border-left: none;
     border-right: none;
 }
 .jumbotronTitle {
+    width: 18rem;
     font-size: 4rem;
     padding: 0.5rem;
     background-color: rgba(0, 0, 0, 0.843);
@@ -78,6 +85,22 @@ td {
     color: white;
 }
 
+.boxGame{
+    background-image: url(./components/Board/boardwall.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.boxScore {
+  background-image: url(./components/Score/grass2.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+.boxAction {
+  background-color: rgb(118, 68, 39);
+}
 // {#- ANIMATIONS -#}
 .pooButton:active {
     transform-origin: 50% 80%;
@@ -87,6 +110,46 @@ td {
 .box {
     transform-origin: 50% 50%;
     }
+
+    @import url(https://fonts.googleapis.com/css?family=Signika:700,300,600);
+
+    h1 {
+     font-size:5em;
+     font:bold 7.5vw/1.6 'Signika', sans-serif;
+     user-select:none;
+    }
+    
+    h1 span { display:inline-block; animation:float .2s ease-in-out infinite; }
+     @keyframes float {
+      0%,100%{ transform:none; }
+      33%{ transform:translateY(-1px) rotate(-2deg); }
+      66%{ transform:translateY(1px) rotate(2deg); }
+    }
+    body:hover span { animation:bounce .6s; }
+    @keyframes bounce {
+      0%,100%{ transform:translate(0); }
+      25%{ transform:rotateX(20deg) translateY(2px) rotate(-3deg); }
+      50%{ transform:translateY(-20px) rotate(3deg) scale(1.1);  }
+    }
+    
+    span:nth-child(4n) { color:hsl(50, 75%, 55%); text-shadow:1px 1px hsl(50, 75%, 45%), 2px 2px hsl(50, 45%, 45%), 3px 3px hsl(50, 45%, 45%), 4px 4px hsl(50, 75%, 45%); }
+    span:nth-child(4n-1) { color:hsl(135, 35%, 55%); text-shadow:1px 1px hsl(135, 35%, 45%), 2px 2px hsl(135, 35%, 45%), 3px 3px hsl(135, 35%, 45%), 4px 4px hsl(135, 35%, 45%); }
+    span:nth-child(4n-2) { color:hsl(155, 35%, 60%); text-shadow:1px 1px hsl(155, 25%, 50%), 2px 2px hsl(155, 25%, 50%), 3px 3px hsl(155, 25%, 50%), 4px 4px hsl(140, 25%, 50%); }
+    span:nth-child(4n-3) { color:hsl(30, 65%, 60%); text-shadow:1px 1px hsl(30, 45%, 50%), 2px 2px hsl(30, 45%, 50%), 3px 3px hsl(30, 45%, 50%), 4px 4px hsl(30, 45%, 50%); }
+    
+    h1 span:nth-child(2){ animation-delay:.05s; }
+    h1 span:nth-child(3){ animation-delay:.1s; }
+    h1 span:nth-child(4){ animation-delay:.15s; }
+    h1 span:nth-child(5){ animation-delay:.2s; }
+    h1 span:nth-child(6){ animation-delay:.25s; }
+    h1 span:nth-child(7){ animation-delay:.3s; }
+    h1 span:nth-child(8){ animation-delay:.35s; }
+    h1 span:nth-child(9){ animation-delay:.4s; }
+    h1 span:nth-child(10){ animation-delay:.45s; }
+    h1 span:nth-child(11){ animation-delay:.5s; }
+    h1 span:nth-child(12){ animation-delay:.55s; }
+    h1 span:nth-child(13){ animation-delay:.6s; }
+    h1 span:nth-child(14){ animation-delay:.65s; }
 /* RIBBON */
 /* Specifying the name for animation keyframes and keyframes themselves */
 * {

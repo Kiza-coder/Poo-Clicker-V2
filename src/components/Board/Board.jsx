@@ -22,14 +22,14 @@ const handleClick=() =>{
 }
 	return  (
 		<div>
-			    <Container className={""}>
+			    <Container className={"boxGame rounded rounded-lg"}>
 			    <Row>
 				    <Col md={12} className={"d-flex justify-content-center"}>
 					<h1>Board Container</h1>
 				    </Col>
 			    </Row>
 			    <Row>
-				    <Col md={12} className={"d-flex justify-content-center"}>
+				    <Col md={12} className={"d-flex justify-content-center "}>
 						<Box className="box" pose={isVisible ? 'visible' : 'hidden'} >
 							<div className={"d-flex justify-content-center"} class="pooButton" onClick={handleClick}>
 								<img src={process.env.PUBLIC_URL + '/assets/img/poops/poop.png'}></img>
