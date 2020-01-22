@@ -6,7 +6,7 @@ import { Jumbotron, Col } from 'react-bootstrap';
 const JumbotronHeader =() => {
     
         return  (
-                <Jumbotron fluid={true} className={"mb-5"} class="jumbotron">
+                <Jumbotron fluid={true} className={"mb-3"} class="jumbotron">
                     <Col className={'pb-5 text-center d-flex justify-content-center'}>
                         <div className={"text-center jumbotronTitle"}>
                             <h1>

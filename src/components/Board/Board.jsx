@@ -18,7 +18,7 @@ const handleClick=() =>{
 			    <Container className={"boxGame rounded rounded-lg p-2"}>
 					<Row>
 						<Col md={12} className={"d-flex justify-content-center"}>
-						<h1 class="title">👇 Click Me! 👇</h1>
+						<h1 class="title">👇 Pick up the Poo! 👇</h1>
 						</Col>
 					</Row>
 					<Row>
