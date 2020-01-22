@@ -14,11 +14,7 @@ td {
     text-align: center;
     border: solid 1px black; 
 }
-span {
-  .scoreTitle {
-    color: red;
-  }
-}
+
 // {#- MAIN COMPONENTS -#}
 .componentFooter {
     margin-bottom: 3rem;
@@ -66,6 +62,24 @@ span {
     border: solid 2px brown;
     color: white;
 }
+
+.title {
+  font-size: 2rem;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.843);
+  border: solid 2px brown;
+  color: white;
+}
+
+.scoreTitle {
+  width: 18rem;
+  font-size: 2rem;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.843);
+  border: solid 2px brown;
+  color: white;
+}
+
 .actionButton {
     width: 100px;
     height: 50px;
@@ -86,20 +100,24 @@ span {
 }
 
 .boxGame{
-    background-image: url(./components/Board/boardwall.jpg);
+    background-image: url(./components/Board/boardpark.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: 22rem;
+    border: solid 3px black;
 }
 .boxScore {
-  background-image: url(./components/Score/grass2.jpg);
+  background-image: url(./components/Score/scorewall.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: white;
+  border: solid 3px black;
 }
 .boxAction {
   background-color: rgb(118, 68, 39);
+  border: solid 3px black;
 }
 // {#- ANIMATIONS -#}
 .pooButton:active {

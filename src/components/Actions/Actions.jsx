@@ -22,14 +22,14 @@ function handleClickAction(id){
 
     return (
         <div>
-            <Container className={"border border-dark boxAction"}>
+            <Container className={"boxAction rounded rounded-lg"}>
                 <Row>
-                    <Col>
+                    <Col class="p-4">
                     <Table>
                         <thead>
                             <tr>
                         <th>
-                            Action Elements
+                            <h1 class="title">Actions</h1>
                         </th>
                         </tr>
                         </thead>

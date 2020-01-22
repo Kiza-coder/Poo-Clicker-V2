@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const Footer = () => {
     return (  
-            <Container fluid={true} className={'mt-4'}>
+            <Container fluid={true} className={'mt-2'}>
                     <Row>
                         <Col md={6} className={'componentFooter d-flex justify-content-around align-items-center'}>
                             <small>Follow us:</small>
