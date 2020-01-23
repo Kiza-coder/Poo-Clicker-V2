@@ -182,14 +182,14 @@ function bonusClickIncrease(id) {
 // Stock all the setInterval  who is linked to the action with type ""
 useEffect(() => {
         let mouse = setInterval(() =>{
-            setClickCounter(clickCounter  => clickCounter + action[1].increase)
-        },action[1].time)
-        let cat = setInterval(() =>{
             setClickCounter(clickCounter  => clickCounter + action[2].increase)
         },action[2].time)
-        let cow = setInterval(() =>{
+        let cat = setInterval(() =>{
             setClickCounter(clickCounter  => clickCounter + action[3].increase)
         },action[3].time)
+        let cow = setInterval(() =>{
+            setClickCounter(clickCounter  => clickCounter + action[4].increase)
+        },action[4].time)
 },[])
 
 

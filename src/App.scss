@@ -106,6 +106,7 @@ td {
 .actionButton {
     height: 50px;
     width: 100px;
+    margin: 5rem;
     background-color: white;
     border: 3px solid black;
     border-radius: 10px 10px 10px 10px;
@@ -118,7 +119,7 @@ td {
         background-color: grey !important;
     }
     & .buttonClick{
-        background-color:yellow !important; 
+      background-color:yellow !important; 
     }
 }
 .actionButton:hover {
