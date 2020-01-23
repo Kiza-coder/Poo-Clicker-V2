@@ -24,8 +24,8 @@ const initialState = [
         name: "Mega Boost",
         type: "bonusClick",
         lvl: 0,
-        cost: 7,
-        increase: 150,
+        cost: 30,
+        increase: 50,
         time: 6000,
         factor: 0,
         avaible: false,
@@ -220,7 +220,6 @@ useEffect(() => {
 
 
 const bonusClick = (id) => {
-    console.log("BOnusok")
     if(payment(id)){
         levelup(id)
         if(action[id].lvl === 2){
@@ -231,14 +230,14 @@ const bonusClick = (id) => {
 
 
 useEffect(() => {
-    if(action[4].bonus === true)
+    if(action[1].bonus === true)
     {
         let previousState = clickValue
-        setClickValue(action[4].increase)
+        setClickValue(action[1].increase)
         setTimeout(()=>{
             setClickValue(previousState)
-        },action[4].time)
-        dispatch({type: "level-bonusClick",index:4, activate:false})
+        },action[1].time)
+        dispatch({type: "level-bonusClick",index:1, activate:false})
     }
 },[action])
 

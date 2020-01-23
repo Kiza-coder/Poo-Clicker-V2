@@ -51,7 +51,7 @@ const handleButtonMouseOut = () => {
 }
 
     return (
-            <div className={classname.classname} onClick={handleButtonMouseClick} onMouseOver={handleButtonMouseHoover} onMouseOut={handleButtonMouseOut}>{action.name}</div>
+    <div className={classname.classname} onClick={handleButtonMouseClick} onMouseOver={handleButtonMouseHoover} title={action.lvl}onMouseOut={handleButtonMouseOut}>{action.name}</div>
     )
 }
 
