@@ -27,17 +27,13 @@ function handleClickAction(id){
 
     return (
         <div>
-            <Container className={"border border-dark"}>
+            <Container className={"boxAction rounded rounded-lg p-2"}>
                 <Row>
-                    <Col>
+                    <Col md={12} className={"d-flex justify-content-center"}>
+						<h1 class="title">Actions</h1>
+					</Col>
+                    <Col class="p-4 d-flex justify-content-center">
                     <Table>
-                        <thead>
-                            <tr>
-                        <th>
-                            Action Elements
-                        </th>
-                        </tr>
-                        </thead>
                         <tbody>
                             <ActionsRow actionsRow={action} clickAction={handleClickAction}/>
                         </tbody>
