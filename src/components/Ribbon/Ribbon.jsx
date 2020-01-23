@@ -2,7 +2,7 @@ import React from 'react';
 
 class Ribbon extends React.Component{
     render() {
-        return  <div class="ticker-wrap">
+        return  <div class="ticker-wrap mb-4">
                     <div class="ticker">
                         <div class="ticker__item">Cookie clicker browser game/</div>
                         <div class="ticker__item">💩💩💩💩💩💩💩💩💩💩💩</div>

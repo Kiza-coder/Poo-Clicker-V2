@@ -24,8 +24,8 @@ const handleClick=() =>{
 					<Row>
 						<Col md={12} className={"d-flex justify-content-center mt-5 pt-5"}>
 							<Box className="">
-								<div className={"d-flex justify-content-center"} class="pooButton" onClick={handleClick}>
-									<img src={process.env.PUBLIC_URL + '/assets/img/poops/poop.png'}></img>
+								<div id="beep" className={"d-flex justify-content-center"} class="pooButton" onClick={handleClick}>
+									<img alt="" src={process.env.PUBLIC_URL + '/assets/img/poops/poop.png'}/>
 								</div>
 							</Box>
 						</Col>

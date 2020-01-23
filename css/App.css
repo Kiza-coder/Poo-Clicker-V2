@@ -1,48 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Signika:700,300,600);
 body {
+  font-family: 'Concert One', cursive;
   background: #fac499;
   background: -webkit-gradient(linear, left bottom, left top, color-stop(2%, #fac499), to(#a2ff7d));
   background: linear-gradient(0deg, #fac499 2%, #a2ff7d 100%);
-  font-family: 'Concert One', cursive;
 }
 
 td {
   width: 3rem;
   text-align: center;
   border: solid 1px black;
-}
-
-.componentFooter {
-  margin-bottom: 3rem;
-  height: 3rem;
-  background-color: black;
-  color: wheat;
-  position: fixed;
-  bottom: 0;
-}
-
-.componentFooter .footerIcon.fa {
-  color: white !important;
-}
-
-.componentFooter .footerIcon.fa:hover {
-  color: #8c4e2b !important;
-}
-
-.pooButton {
-  background-color: rgba(222, 184, 135, 0) !important;
-  background-image: url(https://png2.cleanpng.com/sh/99fa4b8279626b211e1abb350241b1d0/L0KzQYm3U8IxN6ttj5H0aYP2gLBuTgBqdJYyh9g2cHByPbb0jBpqNZdqe9d8LYSwg7nwkwQue6Vue91ucj3zf7F3TgBvb15qhdHzaT3sg73ojvQuPZJnSdU6ZULlcoi5gcMvQGc9UasAOEi0RYO4Vck5QWU7T6gCOD7zfri=/kisspng-pile-of-poo-emoji-feces-t-shirt-sticker-poop-png-emoji-island-5ab1c1e2bb72a3.8689958815215989467678.png);
-  height: 11rem;
-  width: 11rem;
-}
-
-.pooButton img {
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-  height: 10rem;
-  width: 10rem;
 }
 
 .jumbotron {
@@ -56,36 +23,92 @@ td {
   border-right: none;
 }
 
+.componentFooter {
+  height: 3rem;
+  color: wheat;
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+}
+
+.componentFooter .footerIcon.fa {
+  color: white !important;
+}
+
+.componentFooter .footerIcon.fa:hover {
+  color: #8c4e2b !important;
+}
+
+.boxGame {
+  height: 22rem;
+  background-image: url(./components/Board/boardpark.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: solid 3px black;
+}
+
+.boxScore {
+  height: 6.5rem;
+  color: white;
+  background-image: url(./components/Score/scorewall.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: solid 3px black;
+}
+
+.boxAction {
+  height: 15rem;
+  color: white;
+  background-color: #764427;
+  border: solid 3px black;
+}
+
 .jumbotronTitle {
-  width: 18rem;
   font-size: 4rem;
+  width: 18rem;
+  color: white;
   padding: 0.5rem;
   background-color: rgba(0, 0, 0, 0.843);
   border: solid 2px brown;
-  color: white;
 }
 
 .title {
   font-size: 2rem;
+  color: white;
   padding: 0.5rem;
   background-color: rgba(0, 0, 0, 0.843);
-  border: solid 2px brown;
-  color: white;
+  border: solid 3px brown;
+  border-radius: 23px 23px 23px 23px;
+  -moz-border-radius: 23px 23px 23px 23px;
+  -webkit-border-radius: 23px 23px 23px 23px;
 }
 
-.scoreTitle {
-  width: 18rem;
-  font-size: 2rem;
-  padding: 0.5rem;
-  background-color: rgba(0, 0, 0, 0.843);
-  border: solid 2px brown;
-  color: white;
+.pooButton {
+  height: 11rem;
+  width: 11rem;
+  background-color: rgba(222, 184, 135, 0) !important;
+  background-image: url(https://png2.cleanpng.com/sh/99fa4b8279626b211e1abb350241b1d0/L0KzQYm3U8IxN6ttj5H0aYP2gLBuTgBqdJYyh9g2cHByPbb0jBpqNZdqe9d8LYSwg7nwkwQue6Vue91ucj3zf7F3TgBvb15qhdHzaT3sg73ojvQuPZJnSdU6ZULlcoi5gcMvQGc9UasAOEi0RYO4Vck5QWU7T6gCOD7zfri=/kisspng-pile-of-poo-emoji-feces-t-shirt-sticker-poop-png-emoji-island-5ab1c1e2bb72a3.8689958815215989467678.png);
+}
+
+.pooButton img {
+  height: 10rem;
+  width: 10rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .actionButton {
-  width: 100px;
   height: 50px;
+  width: 100px;
+  background-color: white;
   border: 3px solid black;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
 }
 
 .actionButton .buttonAvaible {
@@ -103,36 +126,6 @@ td {
 .actionButton:hover {
   background-color: green !important;
   color: white;
-}
-
-.boxGame {
-  background-image: url(./components/Board/boardpark.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 22rem;
-  border: solid 3px black;
-}
-
-.boxScore {
-  background-image: url(./components/Score/scorewall.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  border: solid 3px black;
-}
-
-.boxAction {
-  background-color: #764427;
-  border: solid 3px black;
-}
-
-.pooButton:active {
-  -webkit-transform-origin: 50% 80%;
-          transform-origin: 50% 80%;
-  -webkit-animation: zoomIn 0.5s cubic-bezier(0.47, 0, 0.75, 0.72) infinite alternate;
-          animation: zoomIn 0.5s cubic-bezier(0.47, 0, 0.75, 0.72) infinite alternate;
 }
 
 .box {
@@ -305,8 +298,6 @@ h1 span:nth-child(14) {
           animation-delay: .65s;
 }
 
-/* RIBBON */
-/* Specifying the name for animation keyframes and keyframes themselves */
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -339,7 +330,7 @@ h1 span:nth-child(14) {
 .ticker-wrap {
   z-index: 1;
   position: fixed;
-  bottom: 0;
+  top: 0px;
   width: 100%;
   overflow: hidden;
   height: 2rem;
@@ -374,6 +365,4 @@ h1 span:nth-child(14) {
   font-size: 1rem;
   color: white;
 }
-
-/* RIBBON TEXT */
 /*# sourceMappingURL=App.css.map */
