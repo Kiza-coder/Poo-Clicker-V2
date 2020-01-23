@@ -60,7 +60,7 @@ td {
   border: solid 3px black;
 }
 .boxAction {
-  height: 15rem;
+  height: 14.5rem;
   color: white;
   background-color: rgb(118, 68, 39);
   border: solid 3px black;
@@ -104,9 +104,13 @@ td {
 
 // {#- BUTTONS -#}
 .actionButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
     height: 50px;
     width: 100px;
-    margin: 5rem;
+    margin: 0.3rem !important;
+    color: black;
     background-color: white;
     border: 3px solid black;
     border-radius: 10px 10px 10px 10px;

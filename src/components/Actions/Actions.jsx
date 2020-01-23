@@ -32,12 +32,10 @@ function handleClickAction(id){
                     <Col md={12} className={"d-flex justify-content-center"}>
 						<h1 class="title">Actions</h1>
 					</Col>
-                    <Col class="p-4 d-flex justify-content-center">
-                    <Table>
-                        <tbody>
-                            <ActionsRow actionsRow={action} clickAction={handleClickAction}/>
-                        </tbody>
-                    </Table>
+                </Row>
+                <Row className={"d-flex justify-content-center"}>
+                    <Col className={"d-flex justify-content-center"}>
+                        <ActionsRow actionsRow={action} clickAction={handleClickAction}/>
                     </Col>
                 </Row>
             </Container>
