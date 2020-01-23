@@ -15,7 +15,7 @@ const ActionsRow = ({actionsRow, clickAction}) => {
                         <ButtonAction key={action.id} action={action} handleClickAction={handleClickAction}/>
                     )}
                 </tr>
-                <tr>
+                <tr class="m-4">
                 {actionsRow.slice(2,5).map((action) =>
                         <ButtonAction key={action.id} action={action} handleClickAction={handleClickAction}/>
                     )}

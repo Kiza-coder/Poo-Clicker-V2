@@ -27,7 +27,7 @@ function handleClickAction(id){
 
     return (
         <div>
-            <Container className={"boxAction rounded rounded-lg p-2"}>
+            <Container className={"boxAction rounded rounded-lg p-2 "}>
                 <Row>
                     <Col md={12} className={"d-flex justify-content-center"}>
 						<h1 class="title">Actions</h1>
