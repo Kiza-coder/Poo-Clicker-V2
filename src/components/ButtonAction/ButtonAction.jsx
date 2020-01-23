@@ -1,13 +1,10 @@
-
-
 import React, {useReducer} from 'react'
-import { Button } from 'react-bootstrap'
 
 const initialState = {
     classname: "actionButton"
 }
 
-// {#-CLASSNAME REDUCER-#}
+// {#-CLASSNAME REDUCER-#} handle the state of classe of the <td> element
 const reducer = (state,action) =>{
     switch(action.type){
         case 'buttonDisabled':
@@ -34,11 +31,13 @@ const reducer = (state,action) =>{
 function ButtonAction({action, handleClickAction}) {
     
 const [classname,dispatch] = useReducer(reducer,initialState)
+
+
 // {#-BUTTON EVENTS-#}
 // Click Button Event
 const handleButtonMouseClick = () => {
     dispatch({type:'buttonClick'})
-    handleClickAction()
+    handleClickAction(action.id)
 }
 
 // Hoover Button Event
@@ -52,9 +51,7 @@ const handleButtonMouseOut = () => {
 }
 
     return (
-        <div>
-            <div className={classname.classname} onClick={handleButtonMouseClick} onMouseOver={handleButtonMouseHoover} onMouseOut={handleButtonMouseOut}>{action.name}</div> 
-        </div>
+    <div className={classname.classname} onClick={handleButtonMouseClick} onMouseOver={handleButtonMouseHoover} title={action.lvl}onMouseOut={handleButtonMouseOut}>{action.name}</div>
     )
 }
 
