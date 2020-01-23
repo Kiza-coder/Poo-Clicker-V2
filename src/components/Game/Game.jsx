@@ -21,6 +21,18 @@ const initialState = [
     },
     {
         id:1,
+        name: "bonus",
+        type: "bonusClick",
+        lvl: 0,
+        cost: 7,
+        increase: 150,
+        time: 6000,
+        factor: 0,
+        avaible: false,
+        bonus: false
+    },
+    {
+        id:2,
         name: "Mouse",
         type: "packageClick",
         lvl: 0,
@@ -31,7 +43,7 @@ const initialState = [
         avaible: false
     },
     {
-        id:2,
+        id:3,
         name: "Cat",
         type: "packageClick",
         lvl: 0,
@@ -42,7 +54,7 @@ const initialState = [
         avaible: false
     },
     {
-        id:3,
+        id:4,
         name: "Cow",
         type: "packageClick",
         lvl: 0,
@@ -52,18 +64,6 @@ const initialState = [
         factor: 4,
         avaible: false
     },
-    {
-        id:4,
-        name: "bonus",
-        type: "bonusClick",
-        lvl: 0,
-        cost: 7,
-        increase: 150,
-        time: 6000,
-        factor: 0,
-        avaible: false,
-        bonus: false
-    }
 ]
 
 
