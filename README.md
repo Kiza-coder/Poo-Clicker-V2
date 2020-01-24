@@ -119,8 +119,6 @@ JavaScript.
 - [x] Work on the main project.
 - [ ] Launch the app.
 
-ℹ️ For further informations, please make sure to visit our **Trello** [board](https://trello.com/b/aARBOSKu/poo-clicker-v2)
-
 <hr>
 
 ## ◾ Build-status
